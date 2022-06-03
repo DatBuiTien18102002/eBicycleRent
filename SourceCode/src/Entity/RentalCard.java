@@ -1,13 +1,20 @@
-package Entity;
+package entity;
+
+import boundary.StoredFiles;
 
 public class RentalCard extends Card{
+    private static StoredFiles accounts = new StoredFiles("rentalCards.json");
     private String username;
     private Integer password;
     private String email;
     private boolean loggedIn;
 
     public RentalCard() {
-    }
+        this.username = null;
+        this.password = null;
+        this.email = null;
+        this.loggedIn = false;
+    }      
 
     public RentalCard(Integer iD, String name, Integer phoneNumber, Integer balance, String username, Integer password,
             String email, boolean loggedIn) {
@@ -29,6 +36,10 @@ public class RentalCard extends Card{
         this.email = null;
         System.out.println("[LOGGED_OUT] You have been logged out");
 
+    }
+
+    public static StoredFiles rententalCards() {
+        return accounts;
     }
 
     public String getUsername() {

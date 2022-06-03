@@ -1,4 +1,4 @@
-package Entity;
+package entity;
 
 public abstract class Card {
     private Integer iD;
@@ -7,6 +7,10 @@ public abstract class Card {
     private Integer balance;
 
     public Card() {
+        this.iD = null;
+        this.name = null;
+        this.phoneNumber = null;
+        this.balance = null;
     }
 
     public Card(Integer iD, String name, Integer phoneNumber, Integer balance) {
