@@ -81,11 +81,22 @@ public class RentalCard extends Card {
     public String getUsername() {
         return username;
     }
+    public void setUsername(String username) {
+        this.username = username;
+        this.rentalInfor.setUsername(this.username);
+
+    }
 
 
 
     public Integer getPassword() {
         return password;
+    }
+    public void setPassword(Integer password) {
+        this.password = password;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 
