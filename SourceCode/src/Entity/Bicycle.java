@@ -1,6 +1,9 @@
 package entity;
 
+import boundary.StoredFiles;
+
 public class Bicycle {
+    private static StoredFiles bicycles = new StoredFiles("bicycles.json");
     private String numberPlate;
     private String type;
     private String color;
@@ -21,14 +24,13 @@ public class Bicycle {
         this.type = type;
         this.color = color;
         this.manufacturer = manufacturer;
-        this.status = status;
     }
 
 
 
-
-
-
+    public static StoredFiles getBicycles() {
+        return bicycles;
+    }
 
     public String getNumberPlate() {
         return numberPlate;

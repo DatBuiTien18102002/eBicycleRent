@@ -2,22 +2,43 @@ package entity;
 
 import java.util.Date;
 
+import boundary.StoredFiles;
+
 public class RentalInfor {
+
+    private static StoredFiles rentalInfors = new StoredFiles("rentalInfors.json");
+    
     private String username;
-    private Integer numberPlate;
+    private String numberPlate;
     private Date rentalTime;
 
+    private Bicycle bicycle;
+
     public RentalInfor(){
+        this.bicycle = null;
         this.username = null;
         this.numberPlate = null;
         this.rentalTime = null;
     }
 
-    public RentalInfor(String username, Integer numberPlate, Date rentalTime) {
+    public RentalInfor(String username, String numberPlate, Date rentalTime,Bicycle bicycle) {
+        this.bicycle = bicycle;
         this.username = username;
         this.numberPlate = numberPlate;
         this.rentalTime = rentalTime;
     }
+
+    public static StoredFiles getRentalInfors() {
+        return rentalInfors;
+    }
+
+    public Bicycle getBicycle() {
+        return bicycle;
+    }
+    public void setBicycle(Bicycle bicycle) {
+        this.bicycle = bicycle;
+    }
+
 
     public String getUsername() {
         return username;
@@ -27,11 +48,11 @@ public class RentalInfor {
         this.username = username;
     }
 
-    public Integer getNumberPlate() {
+    public String getNumberPlate() {
         return numberPlate;
     }
 
-    public void setNumberPlate(Integer numberPlate) {
+    public void setNumberPlate(String numberPlate) {
         this.numberPlate = numberPlate;
     }
 

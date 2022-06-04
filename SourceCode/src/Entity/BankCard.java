@@ -5,6 +5,10 @@ public class BankCard extends Card{
     private String bankName;
 
     public BankCard() {
+        this.setiD(null);
+        this.setName(null);
+        this.setPhoneNumber(null);
+        this.setBalance(null);
         this.pin = null;
         this.bankName = null;
     }
