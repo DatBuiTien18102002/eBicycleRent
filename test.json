@@ -1,0 +1,21 @@
+[
+    {
+        "username": "khaitq",
+        "numberPlate": "T601",
+        "rentalTime": "Jun 5, 2022, 10:19:12 AM",
+        "bicycle": {
+            "numberPlate": "02193287",
+            "type": "diaHinh",
+            "color": "vang",
+            "manufacturer": "sa"
+        }
+    },
+    {
+        "username": "khaitq",
+        "numberPlate": "0000",
+        "rentalTime": null,
+        "bicycle": {
+            "numberPlate": "0000"
+        }
+    }
+]

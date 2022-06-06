@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Testc",
+            "request": "launch",
+            "mainClass": "Testc",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
+            "name": "Launch Logintest",
+            "request": "launch",
+            "mainClass": "Logintest",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
+            "name": "Launch Testa",
+            "request": "launch",
+            "mainClass": "Testa",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
+            "name": "Launch testt",
+            "request": "launch",
+            "mainClass": "testt",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestString",
+            "request": "launch",
+            "mainClass": "TestString",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
+            "name": "Launch test",
+            "request": "launch",
+            "mainClass": "test",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
             "name": "Launch BootStrap",
             "request": "launch",
             "mainClass": "ecb.BootStrap",

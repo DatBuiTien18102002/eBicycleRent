@@ -1,30 +1,27 @@
 package entity;
 
 public abstract class Card {
-    private Integer iD;
+    private String iD;
     private String name;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private Integer balance;
 
     public Card() {
-        this.iD = null;
-        this.name = null;
-        this.phoneNumber = null;
-        this.balance = null;
+
     }
 
-    public Card(Integer iD, String name, Integer phoneNumber, Integer balance) {
+    public Card(String iD, String name, String phoneNumber, Integer balance) {
         this.iD = iD;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.balance = balance;
     }
 
-    public Integer getiD() {
+    public String getiD() {
         return iD;
     }
 
-    public void setiD(Integer iD) {
+    public void setiD(String iD) {
         this.iD = iD;
     }
 
@@ -36,11 +33,11 @@ public abstract class Card {
         this.name = name;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

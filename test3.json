@@ -1,0 +1,49 @@
+[
+    {
+        "username": "khaitq",
+        "password": 1213,
+        "email": "sa@gmail.com",
+        "loggedIn": false,
+        "bankCard": {
+            "pin": 12345,
+            "bankName": "ref",
+            "iD": 2121,
+            "name": "dar",
+            "phoneNumber": "3232323",
+            "balance": 123123
+        },
+        "rentalInfor": {
+            "username": "khaitq",
+            "numberPlate": "T601",
+            "rentalTime": 1654447897475,
+            "bicycle": {
+                "numberPlate": "02193287",
+                "type": "diaHinh",
+                "color": "vang",
+                "manufacturer": "sa"
+            }
+        },
+        "iD": 2121,
+        "name": "dar",
+        "phoneNumber": "3232323",
+        "balance": 123123
+    },
+    {
+        "username": "dattq",
+        "password": 1213,
+        "email": "sa@gmail.com",
+        "loggedIn": false,
+        "bankCard": {},
+        "rentalInfor": {
+            "username": "dattq",
+            "numberPlate": "0000",
+            "bicycle": {
+                "numberPlate": "0000"
+            }
+        },
+        "iD": 2131,
+        "name": "we",
+        "phoneNumber": "43423",
+        "balance": 1231543
+    }
+]

@@ -1,5 +1,7 @@
 package entity;
 
+import com.google.gson.JsonObject;
+
 import boundary.StoredFiles;
 
 public class Bicycle {
@@ -11,11 +13,7 @@ public class Bicycle {
     private String status; //   Sẵn sàng/Đang cho thuê
 
     public Bicycle(){
-        this.numberPlate = null;
-        this.type = null;
-        this.color = null;
-        this.manufacturer = null;
-        this.status = null;
+
     }
 
 
@@ -24,6 +22,26 @@ public class Bicycle {
         this.type = type;
         this.color = color;
         this.manufacturer = manufacturer;
+    }
+
+    public static JsonObject convertToJsonObject(Bicycle bicycle){
+        JsonObject jsonObject = new JsonObject();
+        jsonObject.addProperty("numberPlate", bicycle.getNumberPlate());
+        jsonObject.addProperty("type", bicycle.getType());
+        jsonObject.addProperty("color", bicycle.getColor());
+        jsonObject.addProperty("manufacturer", bicycle.getManufacturer());
+        jsonObject.addProperty("status", bicycle.getStatus());
+        return jsonObject;
+    }
+
+    public static Bicycle convertToObject(JsonObject jsonObject){
+        Bicycle bicycle = new Bicycle();
+        bicycle.setNumberPlate(jsonObject.get("numberPlate").getAsString());
+        bicycle.setType(jsonObject.get("type").getAsString());
+        bicycle.setColor(jsonObject.get("color").getAsString());
+        bicycle.setManufacturer(jsonObject.get("manufacturer").getAsString());
+        bicycle.setStatus(jsonObject.get("status").getAsString());
+        return bicycle;
     }
 
 
@@ -64,6 +82,9 @@ public class Bicycle {
         this.manufacturer = manufacturer;
     }
 
+    public String getStatus() {
+        return status;
+    }
 
     public String checkStatus() {
         return status;

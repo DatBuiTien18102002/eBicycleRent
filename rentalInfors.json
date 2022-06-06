@@ -1,0 +1,54 @@
+[
+    {
+        "username": "khaitq",
+        "numberPlate": "C801",
+        "rentalTime": 1654447674598,
+        "bicycle": {
+            "numberPlate": "C801",
+            "type": "City",
+            "color": "Red",
+            "manufacturer": "Giant",
+            "status": "Currently for rent"
+        }       
+    },
+    {
+        "username": "trangqt",
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000"
+        }
+    },
+    {
+        "username": "baolhg",
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000"
+        }
+    },
+    {
+        "username": "tunt",
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000"
+        }
+    },
+    {
+        "username": "tand",
+        "numberPlate": "A304",
+        "rentalTime": 1654447897475,
+        "bicycle": {
+            "numberPlate": "A304",
+            "type": "Mountain",
+            "color": "Yellow",
+            "manufacturer": "Giant",
+            "status": "Currently for rent"
+        }
+    },
+    {
+        "username": "thuannlq",
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000"
+        }
+    }
+]
