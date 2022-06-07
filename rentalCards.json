@@ -19,7 +19,8 @@
                 "numberPlate": "C801",
                 "type": "City",
                 "color": "Red",
-                "manufacturer": "Giant"
+                "manufacturer": "Giant",
+                "status": "Currently for rent"
             }
         },
         "iD": "1100296481",
@@ -34,7 +35,11 @@
         "bankCard": {},
         "rentalInfor": {
             "username": "trangqt",
-            "numberPlate": "0000"
+            "numberPlate": "0000",
+            "bicycle": {
+                "numberPlate": "0000",
+                "status": "Ready"
+            }
         },
         "iD": "123",
         "name": "Trang",
@@ -48,7 +53,11 @@
         "bankCard": {},
         "rentalInfor": {
             "username": "baolhg",
-            "numberPlate": "0000"
+            "numberPlate": "0000",
+            "bicycle": {
+                "numberPlate": "0000",
+                "status": "Ready"
+            }
         },
         "iD": "123",
         "name": "Bao",
@@ -62,7 +71,11 @@
         "bankCard": {},
         "rentalInfor": {
             "username": "tunt",
-            "numberPlate": "0000"
+            "numberPlate": "0000",
+            "bicycle": {
+                "numberPlate": "0000",
+                "status": "Ready"
+            }
         },
         "iD": "123",
         "name": "Tu",
@@ -82,7 +95,8 @@
                 "numberPlate": "A304",
                 "type": "Mountain",
                 "color": "Yellow",
-                "manufacturer": "Giant"
+                "manufacturer": "Giant",
+                "status": "Currently for rent"
             }
         },
         "iD": "123",
@@ -103,12 +117,41 @@
             "balance": 800000
         },
         "rentalInfor": {
-            "username": "thuannlq",
-            "numberPlate": "0000"
+            "username": "thuanlq",
+            "numberPlate": "0000",
+            "bicycle": {
+                "numberPlate": "0000",
+                "status": "Ready"
+            }
         },
         "iD": "1100255678",
         "name": "Thuan",
         "phoneNumber": "574190",
+        "balance": 0
+    },
+    {
+        "username": "ductmsa",
+        "password": 99999,
+        "email": "ductms@gmail.com",
+        "bankCard": {
+            "pin": 121122,
+            "bankName": "Vietcombank",
+            "iD": "11294881",
+            "name": "Hung",
+            "phoneNumber": "2991639",
+            "balance": 8000000
+        },
+        "rentalInfor": {
+            "username": "ductmsa",
+            "numberPlate": "0000",
+            "bicycle": {
+                "numberPlate": "0000",
+                "status": "Ready"
+            }
+        },
+        "iD": "11294881",
+        "name": "Hung",
+        "phoneNumber": "2991639",
         "balance": 0
     }
 ]

@@ -40,7 +40,9 @@ public class RentalInfor {
         RentalInfor rentalInfor = new RentalInfor(new Bicycle());
         rentalInfor.setUsername(jsonObject.get("username").getAsString());
         rentalInfor.setNumberPlate(jsonObject.get("numberPlate").getAsString());
-        rentalInfor.setRentalTime(jsonObject.get("rentalTime").getAsLong());
+        if(rentalInfor.getNumberPlate().equals("0000") == false){
+            rentalInfor.setRentalTime(jsonObject.get("rentalTime").getAsLong());
+        }
         rentalInfor.setBicycle(Bicycle.convertToObject(jsonObject.get("bicycle").getAsJsonObject()));
         return rentalInfor;
     }

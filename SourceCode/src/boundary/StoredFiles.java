@@ -8,6 +8,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import entity.BankCard;
+import entity.Bicycle;
 
 public class StoredFiles {
     private String storedFile;
@@ -57,6 +58,7 @@ public class StoredFiles {
 
         rentalInfor.addProperty("username", username);
         rentalInfor.addProperty("numberPlate", "0000");
+        rentalInfor.add("bicycle", Bicycle.convertToJsonObject(new Bicycle()));
 
         jsonObject.addProperty("username", username);
         jsonObject.addProperty("password", password);

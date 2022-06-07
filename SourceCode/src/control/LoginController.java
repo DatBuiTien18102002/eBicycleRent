@@ -51,24 +51,12 @@ public class LoginController {
                 JsonObject jsonObject1 = new JsonObject();
                 if(iD.equals("123") == false){
                     jsonObject1 = jsonObject.get("bankCard").getAsJsonObject();
-                    bankCard.setiD(jsonObject1.get("iD").getAsString());
-                    bankCard.setName(jsonObject1.get("name").getAsString());
-                    bankCard.setPhoneNumber(jsonObject1.get("phoneNumber").getAsString());
-                    bankCard.setBalance(jsonObject1.get("balance").getAsInt());
-                    bankCard.setPin(jsonObject1.get("pin").getAsInt());
-                    bankCard.setBankName(jsonObject1.get("bankName").getAsString());
+                    bankCard = BankCard.convertToObject(jsonObject1);
                 }
                 jsonObject1 = jsonObject.get("rentalInfor").getAsJsonObject();
 
                 if(jsonObject1.get("numberPlate").getAsString() != "0000"){
-                    rentalInfor.setUsername(username);
-                    rentalInfor.setNumberPlate(jsonObject1.get("numberPlate").getAsString());
-                    rentalInfor.setRentalTime(jsonObject1.get("rentalTime").getAsLong());
-                    jsonObject1 =  jsonObject1.get("bicycle").getAsJsonObject();
-                    rentalInfor.getBicycle().setNumberPlate(jsonObject1.get("numberPlate").getAsString());
-                    rentalInfor.getBicycle().setType(jsonObject1.get("type").getAsString());
-                    rentalInfor.getBicycle().setColor(jsonObject1.get("color").getAsString());
-                    rentalInfor.getBicycle().setManufacturer(jsonObject1.get("manufacturer").getAsString());
+                    rentalInfor = RentalInfor.convertToObject(jsonObject1);
                 }
                 // update value data to account
                 this.rentalCard.setRentalCard(iD, name, phoneNumber, balance, username, password, email, rentalInfor, bankCard);
@@ -81,7 +69,6 @@ public class LoginController {
         } else {
             System.out.println("[NOT REGISTERD] You have to  register first.!!! ");
         }
-
         // else
         // 3. chua dang ky
     }

@@ -6,11 +6,11 @@ import boundary.StoredFiles;
 
 public class Bicycle {
     private static StoredFiles bicycles = new StoredFiles("bicycles.json");
-    private String numberPlate;
+    private String numberPlate = "0000";
     private String type;
     private String color;
     private String manufacturer;
-    private String status; //   Sẵn sàng/Đang cho thuê
+    private String status = "Ready"; //   Sẵn sàng/Đang cho thuê
 
     public Bicycle(){
 
@@ -37,10 +37,12 @@ public class Bicycle {
     public static Bicycle convertToObject(JsonObject jsonObject){
         Bicycle bicycle = new Bicycle();
         bicycle.setNumberPlate(jsonObject.get("numberPlate").getAsString());
-        bicycle.setType(jsonObject.get("type").getAsString());
-        bicycle.setColor(jsonObject.get("color").getAsString());
-        bicycle.setManufacturer(jsonObject.get("manufacturer").getAsString());
         bicycle.setStatus(jsonObject.get("status").getAsString());
+        if(bicycle.getNumberPlate().equals("0000") == false){
+            bicycle.setType(jsonObject.get("type").getAsString());
+            bicycle.setColor(jsonObject.get("color").getAsString());
+            bicycle.setManufacturer(jsonObject.get("manufacturer").getAsString());
+        }
         return bicycle;
     }
 

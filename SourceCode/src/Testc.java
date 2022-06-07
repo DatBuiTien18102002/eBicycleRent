@@ -4,11 +4,11 @@ import entity.RentalCard;
 
 public class Testc {
     public static void main(String[] args) {
-        //LoginController loginController = new LoginController(new RentalCard());
-        //loginController.login("tand", 9753221);
+        LoginController loginController = new LoginController(new RentalCard());
+        loginController.login("thuanlq", 437890);
 
-        NewRentalCardController newRentalCardController = new NewRentalCardController(new RentalCard());
+        //NewRentalCardController newRentalCardController = new NewRentalCardController(new RentalCard());
 
-        newRentalCardController.createPostpaidCard("ductmsa", 99999, "ductms@gmail.com", "11294881" , 121122);
+        //newRentalCardController.createPostpaidCard("ductmsa", 99999, "ductms@gmail.com", "11294881" , 121122);
     }
 }
