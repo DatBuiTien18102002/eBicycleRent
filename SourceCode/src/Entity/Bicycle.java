@@ -24,6 +24,10 @@ public class Bicycle {
         this.manufacturer = manufacturer;
     }
 
+    public void showInfor(){
+        System.out.printf("%-15s %-12s %-12s %-14s %-18s ",this.numberPlate,this.type,this.color,this.manufacturer,this.status);
+    }
+
     public static JsonObject convertToJsonObject(Bicycle bicycle){
         JsonObject jsonObject = new JsonObject();
         jsonObject.addProperty("numberPlate", bicycle.getNumberPlate());

@@ -3,13 +3,13 @@
 *  author: cgm
 */
 package control;
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import entity.BankCard;
 import entity.Bicycle;
 import entity.RentalCard;
-import entity.RentalInfor;
 
 public class LoginController {
 
@@ -21,7 +21,6 @@ public class LoginController {
     }
 
     public void login(String username, Integer password) {
-
         JsonArray tempMemory = RentalCard.getRentalCards().getAll();
 
         int index = -1;
@@ -45,21 +44,24 @@ public class LoginController {
                 String phoneNumber = jsonObject.get("phoneNumber").getAsString();
                 Integer balance = jsonObject.get("balance").getAsInt();
                 String email = jsonObject.get("email").getAsString();
+                String numberPlate = jsonObject.get("numberPlate").getAsString();
+                Long rentalTime = null;
                 Bicycle bicycle = new Bicycle();
-                RentalInfor rentalInfor = new RentalInfor(bicycle);
                 BankCard bankCard = new BankCard();
                 JsonObject jsonObject1 = new JsonObject();
-                if(iD.equals("123") == false){
+                jsonObject1 = jsonObject.get("bicycle").getAsJsonObject();
+                if (!numberPlate.equals("0000")) {
+                    rentalTime = jsonObject.get("rentalTime").getAsLong();
+                    bicycle = Bicycle.convertToObject(jsonObject1);
+                }
+                if (iD.equals("123") == false) {
                     jsonObject1 = jsonObject.get("bankCard").getAsJsonObject();
                     bankCard = BankCard.convertToObject(jsonObject1);
                 }
-                jsonObject1 = jsonObject.get("rentalInfor").getAsJsonObject();
 
-                if(jsonObject1.get("numberPlate").getAsString() != "0000"){
-                    rentalInfor = RentalInfor.convertToObject(jsonObject1);
-                }
                 // update value data to account
-                this.rentalCard.setRentalCard(iD, name, phoneNumber, balance, username, password, email, rentalInfor, bankCard);
+                this.rentalCard.setRentalCard(iD, name, phoneNumber, balance, username, password, email, numberPlate,
+                        rentalTime, bicycle, bankCard);
                 System.out.println("[LOGGED IN] You are logged in.");
 
             } else {
@@ -74,7 +76,7 @@ public class LoginController {
     }
     // logout
 
-    public void logout(){
+    public void logout() {
         this.rentalCard.logout();
     }
 

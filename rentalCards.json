@@ -3,6 +3,19 @@
         "username": "khaitq",
         "password": 23145,
         "email": "khaitq@gmail.com",
+        "iD": "1100296481",
+        "name": "Khai",
+        "phoneNumber": "3079737",
+        "balance": 0,
+        "numberPlate": "C801",
+        "rentalTime": 1654447674598,
+        "bicycle": {
+            "numberPlate": "C801",
+            "type": "City",
+            "color": "Red",
+            "manufacturer": "Giant",
+            "status": "Currently for rent"
+        },
         "bankCard": {
             "pin": 290902,
             "bankName": "BIDV",
@@ -10,104 +23,85 @@
             "name": "Khai",
             "phoneNumber": "3079737",
             "balance": 9000000
-        },
-        "rentalInfor": {
-            "username": "khaitq",
-            "numberPlate": "C801",
-            "rentalTime": 1654447674598,
-            "bicycle": {
-                "numberPlate": "C801",
-                "type": "City",
-                "color": "Red",
-                "manufacturer": "Giant",
-                "status": "Currently for rent"
-            }
-        },
-        "iD": "1100296481",
-        "name": "Khai",
-        "phoneNumber": "3079737",
-        "balance": 0
+        }
     },
     {
         "username": "trangqt",
         "password": 123456,
         "email": "trangqt@gmail.com",
-        "bankCard": {},
-        "rentalInfor": {
-            "username": "trangqt",
-            "numberPlate": "0000",
-            "bicycle": {
-                "numberPlate": "0000",
-                "status": "Ready"
-            }
-        },
         "iD": "123",
         "name": "Trang",
         "phoneNumber": "07669805",
-        "balance": 8000000
+        "balance": 8000000,
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000",
+            "status": "Ready"
+        },
+        "bankCard": {}
     },
     {
         "username": "baolhg",
         "password": 108023,
         "email": "baolhg@gmail.com",
-        "bankCard": {},
-        "rentalInfor": {
-            "username": "baolhg",
-            "numberPlate": "0000",
-            "bicycle": {
-                "numberPlate": "0000",
-                "status": "Ready"
-            }
-        },
         "iD": "123",
         "name": "Bao",
         "phoneNumber": "35675853",
-        "balance": 1000000
+        "balance": 1000000,
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000",
+            "status": "Ready"
+        },
+        "bankCard": {}
     },
     {
         "username": "tunt",
         "password": 452353,
         "email": "tunt@gmail.com",
-        "bankCard": {},
-        "rentalInfor": {
-            "username": "tunt",
-            "numberPlate": "0000",
-            "bicycle": {
-                "numberPlate": "0000",
-                "status": "Ready"
-            }
-        },
         "iD": "123",
         "name": "Tu",
         "phoneNumber": "45609834",
-        "balance": 500000
+        "balance": 500000,
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000",
+            "status": "Ready"
+        },
+        "bankCard": {}
     },
     {
         "username": "tand",
         "password": 975321,
         "email": "tand@gmail.com",
-        "bankCard": {},
-        "rentalInfor": {
-            "username": "tand",
-            "numberPlate": "A304",
-            "rentalTime": 1654447897475,
-            "bicycle": {
-                "numberPlate": "A304",
-                "type": "Mountain",
-                "color": "Yellow",
-                "manufacturer": "Giant",
-                "status": "Currently for rent"
-            }
-        },
         "iD": "123",
         "name": "Tan",
         "phoneNumber": "76655853",
-        "balance": 5000000
+        "balance": 5000000,
+        "numberPlate": "A304",
+        "rentalTime": 1654447897475,
+        "bicycle": {
+            "numberPlate": "A304",
+            "type": "Mountain",
+            "color": "Yellow",
+            "manufacturer": "Giant",
+            "status": "Currently for rent"
+        },
+        "bankCard": {}
     },
     {
         "username": "thuannlq",
         "password": 437890,
         "email": "thuanngl@gmail.com",
+        "iD": "1100255678",
+        "name": "Thuan",
+        "phoneNumber": "574190",
+        "balance": 0,
+        "numberPlate": "0000",
+        "bicycle": {
+            "numberPlate": "0000",
+            "status": "Ready"
+        },
         "bankCard": {
             "pin": 873456,
             "bankName": "SHSB",
@@ -115,43 +109,6 @@
             "name": "Thuan",
             "phoneNumber": "574190",
             "balance": 800000
-        },
-        "rentalInfor": {
-            "username": "thuanlq",
-            "numberPlate": "0000",
-            "bicycle": {
-                "numberPlate": "0000",
-                "status": "Ready"
-            }
-        },
-        "iD": "1100255678",
-        "name": "Thuan",
-        "phoneNumber": "574190",
-        "balance": 0
-    },
-    {
-        "username": "ductmsa",
-        "password": 99999,
-        "email": "ductms@gmail.com",
-        "bankCard": {
-            "pin": 121122,
-            "bankName": "Vietcombank",
-            "iD": "11294881",
-            "name": "Hung",
-            "phoneNumber": "2991639",
-            "balance": 8000000
-        },
-        "rentalInfor": {
-            "username": "ductmsa",
-            "numberPlate": "0000",
-            "bicycle": {
-                "numberPlate": "0000",
-                "status": "Ready"
-            }
-        },
-        "iD": "11294881",
-        "name": "Hung",
-        "phoneNumber": "2991639",
-        "balance": 0
+        }
     }
 ]

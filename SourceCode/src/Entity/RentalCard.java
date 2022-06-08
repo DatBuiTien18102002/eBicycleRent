@@ -9,39 +9,40 @@ public class RentalCard extends Card {
     private String username;
     private Integer password;
     private String email;
+    private String numberPlate = "0000";
+    private Long rentalTime;
     private boolean loggedIn = false;
 
     private BankCard bankCard;
-    private RentalInfor rentalInfor;
+    private Bicycle bicycle;
 
     public RentalCard() {
 
     }
 
-    public RentalCard(String iD, String name, String phoneNumber, Integer balance, String username, Integer password,
-            String email,RentalInfor rentalInfor,BankCard bankCard) {
-        super(iD, name, phoneNumber, balance);
-        this.bankCard = bankCard;
-        this.rentalInfor = rentalInfor;
-        this.username = username;
-        this.rentalInfor.setUsername(this.username);
-        this.password = password;
-        this.email = email;
-        this.loggedIn = true;   
-    }
+    // public RentalCard(String iD, String name, String phoneNumber, Integer balance, String username, Integer password,
+    //         String email,BankCard bankCard) {
+    //     super(iD, name, phoneNumber, balance);
+    //     this.bankCard = bankCard;
+    //     this.username = username;
+    //     this.password = password;
+    //     this.email = email;
+    //     this.loggedIn = true;   
+    // }
 
     public void setRentalCard(String iD, String name, String phoneNumber, Integer balance, String username,
-            Integer password,String email,RentalInfor rentalInfor,BankCard bankCard) {
+            Integer password,String email, String numberPlate, Long rentalTime,Bicycle bicycle,BankCard bankCard) {
         this.setiD(iD);
         this.setName(name);
         this.setPhoneNumber(phoneNumber);
         this.setBalance(balance);
         this.bankCard = bankCard;
-        this.rentalInfor = rentalInfor;
+        this.bicycle = bicycle;
         this.username = username;
-        this.rentalInfor.setUsername(username);
         this.password = password;
         this.email = email;
+        this.numberPlate = numberPlate;
+        this.rentalTime = rentalTime;
         this.loggedIn = true;
     }
 
@@ -54,8 +55,10 @@ public class RentalCard extends Card {
         this.username = null;
         this.password = null;
         this.email = null;
-        bankCard = null;
-        rentalInfor = null;
+        this.numberPlate = null;
+        this.rentalTime = null;
+        this.bankCard = null;
+        this.bicycle = null;
         System.out.println("[LOGGED_OUT] You have been logged out");
 
     }
@@ -65,12 +68,14 @@ public class RentalCard extends Card {
         jsonObject.addProperty("username", rentalCard.getUsername());
         jsonObject.addProperty("password", rentalCard.getPassword());
         jsonObject.addProperty("email", rentalCard.getEmail());
-        jsonObject.add("bankCard", BankCard.convertToJsonObject(rentalCard.getBankCard()));
-        jsonObject.add("rentalInfor",RentalInfor.convertToJsonObject(rentalCard.getRentalInfor()));
         jsonObject.addProperty("iD", rentalCard.getiD());
         jsonObject.addProperty("name", rentalCard.getName());
         jsonObject.addProperty("phoneNumber", rentalCard.getPhoneNumber());
         jsonObject.addProperty("balance", rentalCard.getBalance());
+        jsonObject.addProperty("numberPlate", rentalCard.getNumberPlate());
+        jsonObject.addProperty("rentalTime", rentalCard.getRentalTime());
+        jsonObject.add("bicycle", Bicycle.convertToJsonObject(rentalCard.getBicycle()));
+        jsonObject.add("bankCard", BankCard.convertToJsonObject(rentalCard.getBankCard()));
         return jsonObject;
     }
 
@@ -79,31 +84,43 @@ public class RentalCard extends Card {
         rentalCard.setUsername(jsonObject.get("username").getAsString());
         rentalCard.setPassword(jsonObject.get("password").getAsInt());
         rentalCard.setEmail(jsonObject.get("email").getAsString());
-        rentalCard.setBankCard(BankCard.convertToObject(jsonObject.get("bankCard").getAsJsonObject()));
-        rentalCard.setRentalInfor(RentalInfor.convertToObject(jsonObject.get("rentalInfor").getAsJsonObject()));
         rentalCard.setiD(jsonObject.get("iD").getAsString());
         rentalCard.setName(jsonObject.get("name").getAsString());
         rentalCard.setPhoneNumber(jsonObject.get("phoneNumber").getAsString());
         rentalCard.setBalance(jsonObject.get("balance").getAsInt());
+        rentalCard.setNumberPlate(jsonObject.get("numberPlate").getAsString());
+        if(rentalCard.getNumberPlate().equals("0000") == false){
+            rentalCard.setRentalTime(jsonObject.get("rentalTime").getAsLong());
+        }
+        rentalCard.setBankCard(BankCard.convertToObject(jsonObject.get("bankCard").getAsJsonObject()));
+        rentalCard.setBicycle(Bicycle.convertToObject(jsonObject.get("bicycle").getAsJsonObject()));
         return rentalCard;
     }
 
     public boolean checkBalance(){
-        if(this.getBalance()>1000000){
+        if(this.getBalance()>=1000000){
             return true;
         }
         return false;
+    }
+
+    public int checkTypeCard(){
+        if(this.getiD().equals("123")){
+            return 1;
+        }else{
+            return 2;
+        }
     }
 
     public static StoredFiles getRentalCards() {
         return rentalCards;
     }
 
-    public RentalInfor getRentalInfor() {
-        return rentalInfor;
+    public Bicycle getBicycle() {
+        return bicycle;
     }
-    public void setRentalInfor(RentalInfor rentalInfor) {
-        this.rentalInfor = rentalInfor;
+    public void setBicycle(Bicycle bicycle) {
+        this.bicycle = bicycle;
     }
 
     public BankCard getBankCard() {
@@ -119,8 +136,6 @@ public class RentalCard extends Card {
     }
     public void setUsername(String username) {
         this.username = username;
-        this.rentalInfor.setUsername(this.username);
-
     }
 
 
@@ -141,12 +156,24 @@ public class RentalCard extends Card {
         return email;
     }
 
+    public String getNumberPlate() {
+        return numberPlate;
+    }
 
+    public void setNumberPlate(String numberPlate) {
+        this.numberPlate = numberPlate;
+    }
+
+    public Long getRentalTime() {
+        return rentalTime;
+    }
+
+    public void setRentalTime(Long rentalTime) {
+        this.rentalTime = rentalTime;
+    }
 
     public boolean checkLoggedIn() {
         return loggedIn;
     }
-
-
 
 }

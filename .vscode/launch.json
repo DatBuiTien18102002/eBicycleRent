@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch TestShowBicycle",
+            "request": "launch",
+            "mainClass": "TestShowBicycle",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
             "name": "Launch Testc",
             "request": "launch",
             "mainClass": "Testc",

@@ -52,28 +52,32 @@ public class StoredFiles {
 
     // add to memory
     public void add(String username, Integer password, String email, String name, String phoneNumber,
-            Integer balance,String iD,JsonObject bankCard) {
+            Integer balance, String iD, JsonObject bankCard) {
         JsonObject jsonObject = new JsonObject();
-        JsonObject rentalInfor = new JsonObject();
+        JsonObject bicycle = new JsonObject();
 
-        rentalInfor.addProperty("username", username);
-        rentalInfor.addProperty("numberPlate", "0000");
-        rentalInfor.add("bicycle", Bicycle.convertToJsonObject(new Bicycle()));
+        bicycle.addProperty("numberPlate", "0000");
+        bicycle.addProperty("status", "Ready");
 
         jsonObject.addProperty("username", username);
         jsonObject.addProperty("password", password);
         jsonObject.addProperty("email", email);
-        jsonObject.add("bankCard", bankCard);
-        jsonObject.add("rentalInfor", rentalInfor);
         jsonObject.addProperty("iD", iD);
         jsonObject.addProperty("name", name);
         jsonObject.addProperty("phoneNumber", phoneNumber);
         jsonObject.addProperty("balance", balance);
+        jsonObject.addProperty("numberPlate", "0000");
+        jsonObject.add("bicycle", bicycle);
+        jsonObject.add("bankCard", bankCard);
         memory.add(jsonObject);
     }
 
-    public void set(int index,JsonObject jsonObject){
+    public void set(int index, JsonObject jsonObject) {
         memory.set(index, jsonObject);
+    }
+
+    public void remove(int index){
+        memory.remove(index);
     }
 
     public void write() {
