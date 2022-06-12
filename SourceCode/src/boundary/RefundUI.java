@@ -9,9 +9,9 @@ public class RefundUI {
         this.refundCard = refundCard;
     }
 
-    public void handleRefund() throws InterruptedException{
+    public int handleRefund() throws InterruptedException{
         System.out.println("Refund...");
         Thread.sleep(1500);
-        refundCard.Refund();
+        return refundCard.Refund();
     }
 }

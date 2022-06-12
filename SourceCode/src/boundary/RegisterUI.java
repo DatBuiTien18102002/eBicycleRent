@@ -22,6 +22,7 @@ public class RegisterUI {
         System.out.println("2.  Postpaid card");
         System.out.print("Your choice: ");
         int index = sc.nextInt();
+        sc.nextLine();
         System.out.println("Enter your information:");
         List<Object> list = registerInputs(index);
         if (index == 1) {

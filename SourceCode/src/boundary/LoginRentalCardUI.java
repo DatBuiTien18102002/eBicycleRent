@@ -27,6 +27,9 @@ public class LoginRentalCardUI{
         List<Object> list = new ArrayList<>();
         System.out.print("USERNAME: ");
         String username = sc.nextLine();
+        if(username.equals("")){
+            username = sc.nextLine();
+        }
         System.out.print("PASSWORD: ");
         Integer password = sc.nextInt();
         list.add(username);

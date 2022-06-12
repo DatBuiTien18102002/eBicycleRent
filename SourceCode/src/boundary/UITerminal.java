@@ -22,6 +22,7 @@ public class UITerminal {
     public void systemRentalBike() throws InterruptedException {
         System.out.println("Welcome to the System Rental Bicycle!!");
         int choice;
+        int choice1;
         do {
             Thread.sleep(1500);
             this.displayOptions(1);
@@ -35,26 +36,34 @@ public class UITerminal {
                         Thread.sleep(1500);
                         this.displayOptions(2);
                         System.out.print("Your choice: ");
-                        choice = sc.nextInt();
-                        switch (choice) {
+                        choice1 = sc.nextInt();
+                        switch (choice1) {
                             case (1):
-                                depositUI = new DepositUI(new DepositController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                depositUI = new DepositUI(
+                                        new DepositController(loginRentalCardUI.getLoginController().getRentalCard()));
                                 depositUI.handleDeposit();
                                 break;
                             case (2):
-                                rentBikeUI = new RentBikeUI(new RentBikeController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                rentBikeUI = new RentBikeUI(
+                                        new RentBikeController(loginRentalCardUI.getLoginController().getRentalCard()));
                                 rentBikeUI.handleRentBike();
                                 break;
                             case (3):
-                                returnBikeUI = new ReturnBikeUI(new ReturnBikeController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                returnBikeUI = new ReturnBikeUI(new ReturnBikeController(
+                                        loginRentalCardUI.getLoginController().getRentalCard()));
                                 returnBikeUI.handleReturn();
                                 break;
                             case (4):
-                                refundUI = new RefundUI(new RefundCardController(loginRentalCardUI.getLoginController().getRentalCard()));
-                                refundUI.handleRefund();
+                                refundUI = new RefundUI(new RefundCardController(
+                                        loginRentalCardUI.getLoginController().getRentalCard()));
+                                if (refundUI.handleRefund() == 0) {
+                                    break;
+                                }
                             case (0):
-                                logoutUI = new LogoutUI(new LoginController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                logoutUI = new LogoutUI(
+                                        new LoginController(loginRentalCardUI.getLoginController().getRentalCard()));
                                 logoutUI.handleLogout();
+                                sc.nextLine();
                                 break;
                             default:
                                 System.out.println("Unknow command.");

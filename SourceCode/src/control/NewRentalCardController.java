@@ -58,7 +58,7 @@ public class NewRentalCardController {
             int index = BankCard.getBankCards().search("iD", iD);
             JsonArray tempMemory = BankCard.getBankCards().getAll();
             if(index == -1){
-                System.out.println("[WRONG ID] The ID you enterd is incorrect!!! ");
+                System.out.println("[WRONG ID] The ID you entered is incorrect!!! ");
                 return;
             }else{
                 JsonObject jsonObject = tempMemory.get(index).getAsJsonObject();
@@ -70,7 +70,7 @@ public class NewRentalCardController {
                     RentalCard.getRentalCards().write();
                     System.out.println(listCheck.get(1));
                 }else{
-                    System.out.println("[WRONG PIN] The PIN  you enterd is incorrect!!!");
+                    System.out.println("[WRONG PIN] The PIN  you entered is incorrect!!!");
                 }
             }
 

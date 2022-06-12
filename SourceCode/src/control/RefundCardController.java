@@ -9,10 +9,10 @@ public class RefundCardController {
         this.rentalCard = rentalCard;
     }
 
-    public void Refund() {
+    public int Refund() {
         if(!rentalCard.getNumberPlate().equals("0000")){
             System.out.println("[REFUND FAILED] You need to return the bike before refund card!!!");
-            return;
+            return 0;
         }else{
             if(rentalCard.checkTypeCard() == 1){
                 System.out.println("You will get the remaining  " + rentalCard.getBalance() +" d in the card");
@@ -20,6 +20,7 @@ public class RefundCardController {
             System.out.println("[REFUND SUCCESS] Thank you for using our service");
             RentalCard.getRentalCards().remove(RentalCard.getRentalCards().search("username", rentalCard.getUsername()));
             RentalCard.getRentalCards().write();
+            return 1;
         }
     }
 }
