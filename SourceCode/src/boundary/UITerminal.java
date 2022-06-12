@@ -49,7 +49,7 @@ public class UITerminal {
                             case (4):
                                 refundUI = new RefundUI(new RefundCardController(loginRentalCardUI.getLoginController().getRentalCard()));
                                 
-                            case (5):
+                            case (0):
                                 logoutUI = new LogoutUI(new LoginController(loginRentalCardUI.getLoginController().getRentalCard()));
                                 break;
                             default:
@@ -61,6 +61,8 @@ public class UITerminal {
                     break;
                 case (2):
                     registerUI = new RegisterUI();
+                    break;
+                case (0):
                     break;
                 default:
                     System.out.println("Unknow command.");

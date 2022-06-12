@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BootStrap",
+            "request": "launch",
+            "mainClass": "BootStrap",
+            "projectName": "ThueXeDap_904896d8"
+        },
+        {
+            "type": "java",
             "name": "Launch TestShowBicycle",
             "request": "launch",
             "mainClass": "TestShowBicycle",
