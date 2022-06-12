@@ -76,8 +76,13 @@ public class LoginController {
     }
     // logout
 
+    public RentalCard getRentalCard() {
+        return rentalCard;
+    }
+
     public void logout() {
         this.rentalCard.logout();
     }
+
 
 }

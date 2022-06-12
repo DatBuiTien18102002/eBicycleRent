@@ -15,7 +15,7 @@ public class ReturnBikeController {
         this.rentalCard = rentalCard;
     }
 
-    public void ReturnBike(Date payTime) {
+    public void ReturnBike(Date payTime) throws InterruptedException {
         if (rentalCard.getNumberPlate().equals("0000")) {
             System.out.println("[RETURN FAILED] You need to rent a bicycle before you return");
             return;
@@ -30,6 +30,8 @@ public class ReturnBikeController {
                 System.out.println("Your balance: "+ rentalCard.getBankCard().getBalance());
             }
             System.out.println("Money you have to pay: "+ moneyRental);
+            System.out.println("Return bike...");
+            Thread.sleep(500);
             if (rentalCard.checkTypeCard() == 1 && rentalCard.getBalance() < moneyRental
                     || rentalCard.checkTypeCard() == 2 && rentalCard.getBankCard().getBalance() < moneyRental) {
                 System.out.println("[RETURN FAILED] The balance in the card is not enough to return the bike");

@@ -59,8 +59,6 @@ public class RentalCard extends Card {
         this.rentalTime = null;
         this.bankCard = null;
         this.bicycle = null;
-        System.out.println("[LOGGED_OUT] You have been logged out");
-
     }
 
     public static JsonObject convertToJsonObject(RentalCard rentalCard){
