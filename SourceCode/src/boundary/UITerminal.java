@@ -39,18 +39,22 @@ public class UITerminal {
                         switch (choice) {
                             case (1):
                                 depositUI = new DepositUI(new DepositController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                depositUI.handleDeposit();
                                 break;
                             case (2):
                                 rentBikeUI = new RentBikeUI(new RentBikeController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                rentBikeUI.handleRentBike();
                                 break;
                             case (3):
                                 returnBikeUI = new ReturnBikeUI(new ReturnBikeController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                returnBikeUI.handleReturn();
                                 break;
                             case (4):
                                 refundUI = new RefundUI(new RefundCardController(loginRentalCardUI.getLoginController().getRentalCard()));
-                                
+                                refundUI.handleRefund();
                             case (0):
                                 logoutUI = new LogoutUI(new LoginController(loginRentalCardUI.getLoginController().getRentalCard()));
+                                logoutUI.handleLogout();
                                 break;
                             default:
                                 System.out.println("Unknow command.");
@@ -61,6 +65,7 @@ public class UITerminal {
                     break;
                 case (2):
                     registerUI = new RegisterUI();
+                    registerUI.handleRegister();
                     break;
                 case (0):
                     break;
