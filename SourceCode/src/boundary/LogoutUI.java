@@ -11,7 +11,7 @@ public class LogoutUI {
     
     public void handleLogout() throws InterruptedException {
         System.out.println("Logout...");
-        Thread.sleep(500);
+        Thread.sleep(1500);
         loginController.logout();
         System.out.println("[LOGGED_OUT] You have been logged out");
     }
