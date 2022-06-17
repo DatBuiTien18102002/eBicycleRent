@@ -40,7 +40,9 @@ public class NewRentalCardController {
             System.out.println(listCheck.get(1));
         } else {
             // them account moi vao CSDL
-            RentalCard.getRentalCards().add(username,password,email,name,phoneNumber,balance,"123",new JsonObject());// memory
+            BankCard bankCard = new BankCard();
+            RentalCard rentalCard = new RentalCard("123", name, phoneNumber, balance, username, password, email, bankCard);
+            RentalCard.getRentalCards().add(RentalCard.convertToJsonObject(rentalCard));// memory
             RentalCard.getRentalCards().write();
             System.out.println(listCheck.get(1));
         }
@@ -66,7 +68,9 @@ public class NewRentalCardController {
                 if(passwordAcc == pin){
                     String name = jsonObject.get("name").getAsString();
                     String phoneNumber = jsonObject.get("phoneNumber").getAsString();
-                    RentalCard.getRentalCards().add(username,password,email,name,phoneNumber,0,iD,jsonObject);// memory
+                    BankCard bankCard = BankCard.convertToObject(jsonObject);
+                    RentalCard rentalCard = new RentalCard(iD, name, phoneNumber, 0, username, password, email, bankCard);
+                    RentalCard.getRentalCards().add(RentalCard.convertToJsonObject(rentalCard));// memory
                     RentalCard.getRentalCards().write();
                     System.out.println(listCheck.get(1));
                 }else{

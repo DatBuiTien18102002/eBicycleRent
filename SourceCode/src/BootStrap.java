@@ -6,3 +6,4 @@ public class BootStrap {
         uiTerminal.systemRentalBike();
     }
 }
+

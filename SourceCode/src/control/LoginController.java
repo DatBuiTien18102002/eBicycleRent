@@ -39,29 +39,9 @@ public class LoginController {
             JsonObject jsonObject = tempMemory.get(index).getAsJsonObject();
             int passwordAcc = jsonObject.get("password").getAsInt();
             if (passwordAcc == password) {
-                String iD = jsonObject.get("iD").getAsString();
-                String name = jsonObject.get("name").getAsString();
-                String phoneNumber = jsonObject.get("phoneNumber").getAsString();
-                Integer balance = jsonObject.get("balance").getAsInt();
-                String email = jsonObject.get("email").getAsString();
-                String numberPlate = jsonObject.get("numberPlate").getAsString();
-                Long rentalTime = null;
-                Bicycle bicycle = new Bicycle();
-                BankCard bankCard = new BankCard();
-                JsonObject jsonObject1 = new JsonObject();
-                jsonObject1 = jsonObject.get("bicycle").getAsJsonObject();
-                if (!numberPlate.equals("0000")) {
-                    rentalTime = jsonObject.get("rentalTime").getAsLong();
-                    bicycle = Bicycle.convertToObject(jsonObject1);
-                }
-                if (iD.equals("123") == false) {
-                    jsonObject1 = jsonObject.get("bankCard").getAsJsonObject();
-                    bankCard = BankCard.convertToObject(jsonObject1);
-                }
-
-                // update value data to account
-                this.rentalCard.setRentalCard(iD, name, phoneNumber, balance, username, password, email, numberPlate,
-                        rentalTime, bicycle, bankCard);
+                
+                rentalCard = RentalCard.convertToObject(jsonObject);
+                rentalCard.setLoggedIn(true);
                 System.out.println("[LOGGED IN] You are logged in.");
 
             } else {

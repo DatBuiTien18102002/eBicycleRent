@@ -20,30 +20,15 @@ public class RentalCard extends Card {
 
     }
 
-    // public RentalCard(String iD, String name, String phoneNumber, Integer balance, String username, Integer password,
-    //         String email,BankCard bankCard) {
-    //     super(iD, name, phoneNumber, balance);
-    //     this.bankCard = bankCard;
-    //     this.username = username;
-    //     this.password = password;
-    //     this.email = email;
-    //     this.loggedIn = true;   
-    // }
-
-    public void setRentalCard(String iD, String name, String phoneNumber, Integer balance, String username,
-            Integer password,String email, String numberPlate, Long rentalTime,Bicycle bicycle,BankCard bankCard) {
-        this.setiD(iD);
-        this.setName(name);
-        this.setPhoneNumber(phoneNumber);
-        this.setBalance(balance);
+    public RentalCard(String iD, String name, String phoneNumber, Integer balance, String username, Integer password,
+            String email,BankCard bankCard) {
+        super(iD, name, phoneNumber, balance);
         this.bankCard = bankCard;
-        this.bicycle = bicycle;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.numberPlate = numberPlate;
-        this.rentalTime = rentalTime;
-        this.loggedIn = true;
+        bicycle = new Bicycle();
+        this.loggedIn = true;   
     }
 
     public void logout() {
@@ -168,6 +153,10 @@ public class RentalCard extends Card {
 
     public void setRentalTime(Long rentalTime) {
         this.rentalTime = rentalTime;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
     }
 
     public boolean checkLoggedIn() {
